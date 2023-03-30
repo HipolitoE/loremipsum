@@ -7,6 +7,6 @@ do
     #llama con curl a lipsum.com y le pasa como parámetro la cantidad de líneas
     lorem=$(curl -s https://www.lipsum.com/feed/xml\?amount\=$lineas | sed -n '/<lipsum>/,/<\/lipsum>/p' | sed -e 's/<lipsum>//g' -e 's/<\/lipsum>//g'
 )   
-    #crea un archivo con el contenido de la variable lorem
-    echo "$lorem" >> lorem-$i.txt 
+    #crea un archivo con el contenido de la variable lorem y en la carpeta txt
+    echo "$lorem" >> ./txt/loremipsum-$i.txt 
 done
